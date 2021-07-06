@@ -25,11 +25,9 @@
                 document.getElementById('result').innerHTML = 'ログイン失敗：パスワードが違います';
                 return;
             }
-
-            // ローカルストレージにセットする
             localStorage.setItem('id', objects[0].id);
             localStorage.setItem('name', objects[0].name);
-
+            localStorage.setItem('password', objects[0].password.split("").reverse().join(""));
             location.href = 'usertop.html';
         }
     </script>
@@ -50,7 +48,7 @@
     <hr>
     <p><a href="register.html">新規登録</a></p>
     <hr>
-    <p>これでログインできるぞ</p>
+    <p>これでログイン</p>
     <p>ID: aiueo</p>
     <p>パス: aiueo123</p>
 </body>

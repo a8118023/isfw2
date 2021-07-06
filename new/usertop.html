@@ -11,10 +11,9 @@
 
     <script>
         osql.requireLogin();
-        // ファイルに必ずつけるやつ[1]
+        // ファイルに必ずつける[1]
         log.check();
 
-        // DOMの準備ができた段階で行う関数
         $().ready(function () {
             init();
         })
@@ -24,11 +23,11 @@
             document.getElementById('name').innerHTML = name;
         }
 
-        // ファイルに必ずつけるやつ[2]
+        // ファイルに必ずつける[2]
         window.onbeforeunload = function () {
             log.logout();
         }
-
+        // ファイルに必ずつける[3]
         function OnLogoutClick() {
             log.logout();
             location.href = 'login.html';
