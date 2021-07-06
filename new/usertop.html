@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/osql.js"></script>
+    <script type="text/javascript" src="../lib/log.js"></script>
+
+    <script>
+        osql.requireLogin();
+        // ファイルに必ずつけるやつ[1]
+        log.check();
+
+        // DOMの準備ができた段階で行う関数
+        $().ready(function () {
+            init();
+        })
+
+        function init() {
+            var name = localStorage.getItem('name');
+            document.getElementById('name').innerHTML = name;
+        }
+
+        // ファイルに必ずつけるやつ[2]
+        window.onbeforeunload = function () {
+            log.logout();
+        }
+
+        function OnLogoutClick() {
+            log.logout();
+            location.href = 'login.html';
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>ユーザトップ</h1>
+    <p>ようこそ<span id="name"></span>さん</p>
+    <hr>
+    <p style="text-align: right"><a href="javascript:OnLogoutClick();">ログアウトする</a></p>
+</body>
+
+</html>
