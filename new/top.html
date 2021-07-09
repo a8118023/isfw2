@@ -10,24 +10,19 @@
     <script type="text/javascript" src="../lib/log.js"></script>
 
     <script>
+
+        // ユーザーチェック
         osql.requireLogin();
-        // ファイルに必ずつける[1]
+        // ログインチェック
         log.check();
 
         $().ready(function () {
             init();
         })
-
         function init() {
             var name = localStorage.getItem('name');
             document.getElementById('name').innerHTML = name;
         }
-
-        // ファイルに必ずつける[2]
-        window.onbeforeunload = function () {
-            log.logout();
-        }
-        // ファイルに必ずつける[3]
         function OnLogoutClick() {
             log.logout();
             location.href = 'login.html';
@@ -37,8 +32,10 @@
 </head>
 
 <body>
-    <h1>ユーザトップ</h1>
+    <h1>トップ画面</h1>
     <p>ようこそ<span id="name"></span>さん</p>
+    <p>[1]<a href="class.html">問題を作成する</a></p>
+    <p>[2]<a href="ready.html">問題に挑戦する</a></p>
     <hr>
     <p style="text-align: right"><a href="javascript:OnLogoutClick();">ログアウトする</a></p>
 </body>

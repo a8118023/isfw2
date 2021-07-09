@@ -11,6 +11,9 @@
     <script>
         osql.requireLogin();
 
+        // ログインしていたら、トップ画面に遷移させる処理を書いてください
+        // 理由：ローカルストレージの値が重複してエラーが出てしまうため
+
         async function buttonPressed() {
             var userid = document.getElementById('tf1').value;
             var password = document.getElementById('tf2').value;
@@ -28,7 +31,7 @@
             localStorage.setItem('id', objects[0].id);
             localStorage.setItem('name', objects[0].name);
             localStorage.setItem('password', objects[0].password.split("").reverse().join(""));
-            location.href = 'usertop.html';
+            location.href = 'top.html';
         }
     </script>
 

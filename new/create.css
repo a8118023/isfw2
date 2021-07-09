@@ -1,0 +1,28 @@
+body {
+  color: #fff;
+}
+
+#highScoresList {
+  list-style: none;
+  margin-bottom: 4rem;
+}
+
+.high-score {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+/* テキスト */
+#class_name {
+  margin-bottom: 3rem;
+  width: 100%;
+  outline: none;
+}
+
+#result {
+  height: 500px;
+  width: 300px;
+  overflow: scroll;
+}
+
+
+
