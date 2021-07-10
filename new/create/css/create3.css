@@ -1,0 +1,40 @@
+.title,
+.context {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.start-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 30rem;
+}
+
+#question {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  outline: none;
+}
+
+.card-question {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.8rem;
+}
+
+.card-answer {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  overflow: scroll;
+  width: 280px;
+  height: 150px;
+  background-color: aquamarine;
+  word-break: break-all;
+}
+
+.card {
+  height: 200px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../lib/osql.js"></script>
+    <script type="text/javascript" src="../../../lib/log.js"></script>
+    <title>Create Test</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/create3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">
+            <form class="start-form-container">
+                <p class="title" id="class_title">Class Name：</p>
+                <p class="title" id="test_title">Test Name：</p>
+                <p class="context">Create Qestion Please!</p>
+                <input type="text" name="question" id="question" placeholder="Enter question">
+                <textarea type="text" name="answer" id="answer" placeholder="Enter Answer"></textarea>
+                <button class="btn saveBtn" id="saveTestBtn" type="submit" onclick="buttonPressed()" disabled>Create</button>
+            </form>
+        </div>
+        <div class='child'>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="./../js/create3.js"></script>
+</body>
+
+</html>

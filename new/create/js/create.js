@@ -27,12 +27,33 @@ async function update() {
     var objects = await osql.connect(sql);
     var len = objects.length;
     var str = ""
-    var str = "<ul id='highScoresList'>"
     for (var i = 0; i < len; i++) {
         var object = objects[i];
-        str += `<li class="high-score card">${object.name}</li>`
+        str += `<div class="card">
+        <div class="between-space">
+            <div class="course"
+                onclick="buttonSelected('${object.id}', '${object.name}')">
+                授業名：</br>${object.name}
+            </div>
+            <div class="delete" 
+                onclick="buttonDeleted('${object.id}')">
+                delete
+            </div>
+        </div>
+    </div>`
     }
-    str += "</ul>"
-    console.log(str);
     document.getElementById('result').innerHTML = str;
+}
+
+async function buttonDeleted(classId) {
+    if (window.confirm("削除しますか？")) {
+        var sql = `delete from Classes where id = '${classId}'`;
+        await osql.connect(sql);
+    }
+}
+
+async function buttonSelected(classId, className) {
+    localStorage.setItem('classId', classId);
+    localStorage.setItem('className', className);
+    location.href = 'create2.html';
 }

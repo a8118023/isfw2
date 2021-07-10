@@ -1,0 +1,31 @@
+#class_title {
+  font-family: 'DotGothic16', sans-serif;
+}
+
+body {
+  color: #fff;
+}
+
+.high-score {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+#test_name {
+  margin-bottom: 3rem;
+  width: 100%;
+  outline: none;
+}
+
+.course,
+.creater {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.8rem;
+}
+
+.course-creater {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+}

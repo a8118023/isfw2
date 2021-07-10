@@ -1,0 +1,19 @@
+body {
+  color: #fff;
+}
+
+.high-score {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+#class_name {
+  margin-bottom: 3rem;
+  width: 100%;
+  outline: none;
+}
+
+.course {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.8rem;
+}
