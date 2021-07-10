@@ -17,6 +17,7 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   outline: none;
+  width: 100%;
 }
 
 .card-question {
@@ -33,8 +34,10 @@
   height: 150px;
   background-color: aquamarine;
   word-break: break-all;
+  margin-bottom: 20px;
 }
 
 .card {
   height: 200px;
+  overflow: scroll;
 }

@@ -115,7 +115,7 @@ h2 {
   transform: none;
 }
 
-#highscore-btn {
+.highscore-btn {
   background: linear-gradient(
     90deg,
     rgb(255, 247, 9) 0%,
@@ -123,8 +123,20 @@ h2 {
   );
 }
 
-#highscore-btn:hover {
+.highscore-btn:hover {
   box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 0, 0.5);
+}
+
+.back-btn {
+  background: linear-gradient(
+    90deg,
+    rgb(9, 255, 222) 0%,
+    rgb(6, 205, 240) 100%
+  );
+}
+
+.back-btn {
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(4, 135, 165, 0.639);
 }
 
 .saveBtn {

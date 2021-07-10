@@ -10,7 +10,7 @@ $().ready(function () {
 
 $(document).ready(function () {
     if (timer) { return; }
-    timer = setInterval(update, 500);
+    timer = setInterval(update, 3000);
 });
 
 
