@@ -71,7 +71,8 @@ async function update() {
 
 async function buttonDeleted(questionId) {
     if (window.confirm("削除しますか？")) {
-        var sql = `delete from Tests where id = '${questionId}'`;
+        var sql = `delete from Questions where id = '${questionId}'`;
         await osql.connect(sql);
+        alert("成功しました")
     }
 }

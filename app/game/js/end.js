@@ -1,10 +1,8 @@
 const saveScoreBtn = document.querySelector('#saveScoreBtn')
-// ファイナルスコア
 const finalScore = document.querySelector('#finalScore')
-// 直近のやつ
 const mostRecentScore = localStorage.getItem('mostRecentScore')
-const highScores = JSON.parse(localStorage.getItem('highScores')) || []
-const MAX_HIGH_SCORES = 5
+const userId = localStorage.getItem('id')
+const testId = localStorage.getItem('testId')
 
 function OnLogoutClick(){
     log.logout();
@@ -21,25 +19,16 @@ function init() {
     var str = "Score ";
     str += mostRecentScore;
     finalScore.innerText = str;
+    console.log(new Date());
 }
 
-saveHighScore = e => {
-    e.preventDefault()
-
-    const score = {
-        score: mostRecentScore,
-        name: username.value
+async function saveScore() {
+    if (mostRecentScore != "undefined") {
+        var sql = `insert into Scores (user_id, test_id, score) values ("${userId}", "${testId}", "${mostRecentScore}")`
+        await osql.connect(sql);
+        alert("保存に成功しました")
+        saveScoreBtn.setAttribute("disabled", true);
+        } else {
+        alert("スコアが見つかりません")
     }
-
-    highScores.push(score)
-    
-    highScores.sort((a, b) => {
-        return b.score - a.score
-    })
-
-    highScores.splice(5)
-
-    // ハイスコアを記録する
-    localStorage.setItem('highScores', JSON.stringify(highScores))
-    window.location.assign('ready.html')
 }

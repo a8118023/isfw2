@@ -67,10 +67,12 @@ function correctSelected() {
         count++;
         score++;
         scoreText.innerHTML = score;
-        progressBarFull.style.width = `${(count/max_questions) * 100}%`
-        elementQuestion.innerHTML = "問題：</br>" + String(availableQuestions[count].question);
+        progressBarFull.style.width = `${(count / max_questions) * 100}%`
+        currentQuestion = String(availableQuestions[count].question);
+        elementQuestion.innerHTML = "問題：</br>" + currentQuestion;
         currentAnswer = String(availableQuestions[count].answer);
     } else {
+        score++;
         localStorage.setItem("mostRecentScore", score);
         location.href = "../html/end.html";
     }
@@ -81,7 +83,8 @@ function wrongSelected() {
         console.log(count);
         count++;
         progressBarFull.style.width = `${(count/max_questions) * 100}%`
-        elementQuestion.innerHTML = "問題：</br>" + String(availableQuestions[count].question);
+        currentQuestion = String(availableQuestions[count].question);
+        elementQuestion.innerHTML = "問題：</br>" + currentQuestion;
         currentAnswer = String(availableQuestions[count].answer);
     } else {
         localStorage.setItem("mostRecentScore", score);
