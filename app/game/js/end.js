@@ -1,22 +1,27 @@
-const username = document.querySelector('#username')
 const saveScoreBtn = document.querySelector('#saveScoreBtn')
-// ファイナルスコアエラー
+// ファイナルスコア
 const finalScore = document.querySelector('#finalScore')
+// 直近のやつ
 const mostRecentScore = localStorage.getItem('mostRecentScore')
-
-
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
-
-
 const MAX_HIGH_SCORES = 5
 
-// 本来ここで入る
-finalScore.innerText = mostRecentScore
+function OnLogoutClick(){
+    log.logout();
+    location.href = '../../login/index.html';
+}
 
-username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value;
-})
+$(document).ready(function () {
+    init();
+});
 
+function init() {
+    var name = localStorage.getItem('name');
+    document.getElementById('top-name').innerHTML = `Hello <span class="name-color">${name}</span>`;
+    var str = "Score ";
+    str += mostRecentScore;
+    finalScore.innerText = str;
+}
 
 saveHighScore = e => {
     e.preventDefault()
