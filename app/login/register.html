@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../lib/osql.js"></script>
+    <script type="text/javascript" src="../../../lib/log.js"></script>
+    <title>Ready</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2>ユーザ登録</h2>
+    <p id="result"><br></p>
+    <div>
+        <label>ID</label>
+        <input id="id" type="text">
+        <p>IDは後から変更できないので注意してください</p>
+    </div>
+    <div>
+        <label>ユーザ名</label>
+        <input id="name" type="text">
+    </div>
+    <div>
+        <label>パスワード</label>
+        <input id="password" type="password">
+    </div>
+    <div id="register">
+        <button type="button" onclick="register()">登録</button>
+    </div>
+    <div class="mt-4 text-center">
+        <a href="index.html">もどる</a>
+    </div>
+</body>
+
+<script>
+    osql.requireLogin();
+
+    async function register() {
+        var userid = document.getElementById("id").value;
+        var username = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+
+        var check_sql = `select id from Users where id = "${userid}";`;
+        var check_objects = await osql.connect(check_sql);
+        if (userid.length < 1 || username.length < 1 || password.length < 1) {
+            document.getElementById("result").innerHTML = `<span class="text-danger">*</span>登録失敗: すべての項目を入力してください`;
+        } else if (check_objects.length > 0) {
+            document.getElementById("result").innerHTML = `<span class="text-danger">*</span>登録失敗: そのIDはすでに使用されています`;
+        } else {
+            var sql = `insert into Users (id, name, password) values("${userid}", "${username}", "${password}");`;
+            var objects = await osql.connect(sql);
+            document.getElementById("result").innerHTML = "ユーザ登録が完了しました";
+            sessionStorage.setItem("userid", userid);
+            sessionStorage.setItem("username", username);
+            document.getElementById("register").innerHTML = `<a href="usertop.html" class="btn btn-primary">ログイン</button>`;
+        }
+    }
+</script>
+
+</html>

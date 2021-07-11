@@ -4,23 +4,27 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../lib/osql.js"></script>
-    <script type="text/javascript" src="../../../lib/log.js"></script>
-    <title>Ready</title>
-    <link rel="stylesheet" href="../../style.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/osql.js"></script>
+    <script type="text/javascript" src="../../lib/log.js"></script>
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script>
-        $(document).ready(function () {
-                init();
-        });
+        // ユーザーチェック
+        osql.requireLogin();
+        // ログインチェック
+        log.check();
 
+        $().ready(function () {
+            init();
+        })
         function init() {
             var name = localStorage.getItem('name');
             document.getElementById('top-name').innerHTML = `Hello <span class="name-color">${name}</span>`;
         }
-
         function OnLogoutClick() {
             log.logout();
             location.href = '../../login/index.html';
@@ -29,19 +33,19 @@
 </head>
 
 <body>
-    <div class="between-space to-top" onclick="location.href='../../login/top.html'">
+    <div class="between-space">
         <p id="top-name"></p>
         <a class="gradient1" href="javascript:OnLogoutClick();">Logout</a>
     </div>
     <hr>
     <div class="container">
         <div id="home" class="flex-column flex-center">
-            <h1>Are you Ready?</h1>
-            <a href="game.html" class="btn">Play</a>
-            <a class="btn highscore-btn" href="../../login/top.html">Go Home<i class="fas fa-home"></i></a>
+            <h1>Hello Question!</h1>
+            <a href="../game/html/classlists.html" class="btn btn-play">Play</a>
+            <a href="../create/html/create.html" id="highscore-btn" class="btn back-btn">Create Q<i class="fas fa-plus"></i></a>
+            <a href="#" class="btn btn-score">My score<i class="fas fa-record-vinyl"></i></a>
         </div>
     </div>
-
 </body>
 
 </html>

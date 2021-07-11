@@ -36,7 +36,7 @@ answer.addEventListener('keyup', () => {
 
 async function buttonPressed() {
     // test_idは必ず必要です
-    if (test_id) {
+    if (test_id != "undefined") {
         var sql = `insert into Questions (test_id, question, answer) values("${test_id}", "${question.value}", "${answer.value}");`;
         await osql.connect(sql);
         } else {

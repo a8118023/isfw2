@@ -25,7 +25,7 @@ test_name.addEventListener('keyup', () => {
 
 
 async function buttonPressed() {
-    if (class_id) {
+    if (class_id != "undefined") {
         var sql = `insert into Tests (user_id, class_id, test_name) values("${user_id}", "${class_id}", "${test_name.value}");`;
         await osql.connect(sql);
         } else {
@@ -34,7 +34,9 @@ async function buttonPressed() {
 }
 
 async function update() {
-    var sql = `select * from Tests where Tests.class_id = '${class_id}'`;
+    var sql = `select * from Users
+    inner join Tests on Users.id=Tests.user_id
+    where Tests.class_id = '${class_id}';`;
     var objects = await osql.connect(sql);
     var len = objects.length;
     var str = ""
@@ -43,10 +45,10 @@ async function update() {
         str += `<div class="card">
                 <div class="between-space">
                     <div class="course-creater">
-                        <div class="course" onclick="buttonSelected('${object.id}', '${object.test_name}')">${object.test_name}</div>
-                        <div class="creater">作成者：</div>
+                        <div class="course" onclick="buttonSelected('${object.test_id}', '${object.test_name}')">${object.test_name}</div>
+                        <div class="creater">作成者：${object.name}</div>
                     </div>
-                    <div class="delete" onclick="buttonDeleted('${object.id}')">delete</div>
+                    <div class="delete" onclick="buttonDeleted('${object.test_id}')">delete</div>
                 </div>
             </div>
         </div>`

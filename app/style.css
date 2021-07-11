@@ -139,6 +139,22 @@ h2 {
   box-shadow: 0 0.4rem 1.4rem 0 rgba(4, 135, 165, 0.639);
 }
 
+.btn-score {
+  background: linear-gradient(90deg, #3be3bc 0%, #57e68e 25%);
+}
+
+.btn-score:hover {
+  box-shadow: 0 0.4rem 1.4rem 0 #57e674 51%;
+}
+
+.btn-play {
+  background: linear-gradient(90deg, #3bade3 0%, #576fe6 25%);
+}
+
+.btn-play:hover {
+  box-shadow: 0 0.4rem 1.4rem 0 #9844b7 51%;
+}
+
 .saveBtn {
   background: linear-gradient(90deg, rgb(247, 25, 0) 0%, rgb(240, 53, 6) 100%);
 }
@@ -148,6 +164,16 @@ h2 {
 }
 
 .fa-crown {
+  font-size: 2.5rem;
+  margin-left: 1rem;
+}
+
+.fa-plus {
+  font-size: 2.5rem;
+  margin-left: 1rem;
+}
+
+.fa-record-vinyl {
   font-size: 2.5rem;
   margin-left: 1rem;
 }
@@ -236,4 +262,57 @@ textarea::placeholder {
   height: 500px;
   width: 300px;
   overflow: scroll;
+}
+
+#result2 {
+  height: 500px;
+  width: 300px;
+  overflow: scroll;
+}
+
+#top-name {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 3.2rem;
+  color: #fff;
+}
+
+.gradient1 {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 60px;
+  font-size: 2.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  outline: none;
+  background: linear-gradient(
+    270deg,
+    #3bade3 0%,
+    #576fe6 25%,
+    #9844b7 51%,
+    #ff357f 100%
+  );
+  background-position: 1% 50%;
+  background-size: 200% auto;
+  transition: all 0.3s ease-out;
+}
+
+.gradient1:hover {
+  color: #fff;
+  background-position: 99% 50%;
+}
+
+.name-color {
+  color: #576fe6;
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 3.2rem;
+}
+
+.course,
+.creater {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.8rem;
+}
+
+.to-top:hover {
+  cursor: pointer;
 }
