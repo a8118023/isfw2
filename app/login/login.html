@@ -10,10 +10,6 @@
 
     <script>
         osql.requireLogin();
-
-        // ログインしていたら、トップ画面に遷移させる処理を書いてください
-        // 理由：ローカルストレージの値が重複してエラーが出てしまうため
-
         async function buttonPressed() {
             var userid = document.getElementById('tf1').value;
             var password = document.getElementById('tf2').value;
