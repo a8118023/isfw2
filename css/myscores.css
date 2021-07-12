@@ -18,6 +18,7 @@ body {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
 }
@@ -35,5 +36,5 @@ th {
   margin-bottom: 3rem;
   overflow: scroll;
   height: 200px;
-  width: 300px;
+  width: 500px;
 }

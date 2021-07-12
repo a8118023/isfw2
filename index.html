@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./lib/log.js"></script>
+    <script type="text/javascript" src="./lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/osql.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script>
+        osql.requireLogin();
+        log.logged();
+
+        async function buttonPressed() {
+            var userid = document.getElementById('tf1').value;
+            var password = document.getElementById('tf2').value;
+
+            var sql = `select * from Users where id="${userid}";`;
+            var objects = await osql.connect(sql);
+            if (objects.length <= 0) {
+                alert("ユーザーが見つかりません");
+                return;
+            }
+            if (objects[0].password != password) {
+                alert("パスワードが違います")
+                return;
+            }
+            localStorage.setItem('id', objects[0].id);
+            localStorage.setItem('name', objects[0].name);
+            localStorage.setItem('password', objects[0].password.split("").reverse().join(""));
+            location.href = 'top.html';
+        }
+    </script>
+    <style>
+        .login_text {
+             margin-bottom: 3rem;
+             width: 100%;
+             outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="home" class="flex-column flex-center">
+            <h1>Hello Question!</h1>
+            <input id="tf1" type="text" name="class_name" class="login_text" placeholder="Enter your Id">
+            <input id="tf2" type="text" name="class_name" class="login_text" placeholder="Enter your Pass">
+            <button onclick="buttonPressed()" class="btn btn-score" style="width: 100%;">Login<i class="fas fa-record-vinyl"></i></button>
+            <a href="register.html" class="create-acount">Create an acount</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -4,20 +4,20 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../lib/osql.js"></script>
-    <script type="text/javascript" src="../../../lib/log.js"></script>
+    <script type="text/javascript" src="./lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/osql.js"></script>
+    <script type="text/javascript" src="./lib/log.js"></script>
     <title>Select Class</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../css/classlists.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/classlists.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="between-space to-top" onclick="location.href='../../login/top.html'">
-        <p id="top-name"></p>
-        <a class="gradient1" href="javascript:OnLogoutClick();">Logout</a>
+    <div class="between-space to-top">
+        <p id="top-name" onclick="location.href='top.html'"></p>
+        <a class="gradient1" href="javascript:log.logout();">Logout</a>
     </div>
     <hr>
     <div class="parent">
@@ -30,6 +30,6 @@
             <div id="result2"></div>
         </div>
     </div>
-    <script src="./../js/classlists.js"></script>
+    <script src="./js/classlists.js"></script>
 </body>
 </html>

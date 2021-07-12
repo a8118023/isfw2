@@ -3,6 +3,7 @@ const saveScoreBtn = document.querySelector('#saveScoreBtn')
 
 $(document).ready(function () {
     init();
+    log.check();
 });
 
 function init() {
@@ -51,13 +52,8 @@ async function buttonSelected(classId) {
     document.getElementById('result2').innerHTML = str;
 }
 
-function OnLogoutClick() {
-    log.logout();
-    location.href = '../../login/index.html';
-}
-
 function buttonNext(testId, testName) {
     localStorage.setItem('testId', testId);
     localStorage.setItem('testName', testName);
-    location.href="../html/ready.html"
+    location.href="ready.html"
 }

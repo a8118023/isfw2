@@ -14,6 +14,7 @@ var answer = false;
 
 $(document).ready(function () {
     init();
+    log.check();
 });
 
 async function init() {
@@ -74,7 +75,7 @@ function correctSelected() {
     } else {
         score++;
         localStorage.setItem("mostRecentScore", score);
-        location.href = "../html/end.html";
+        location.href = "end.html";
     }
 }
 
@@ -88,11 +89,6 @@ function wrongSelected() {
         currentAnswer = String(availableQuestions[count].answer);
     } else {
         localStorage.setItem("mostRecentScore", score);
-        location.href = "../html/end.html";
+        location.href = "end.html";
     }
-}
-
-function OnLogoutClick() {
-    log.logout();
-    location.href = '../../login/index.html';
 }

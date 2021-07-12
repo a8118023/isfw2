@@ -6,11 +6,14 @@ const saveTestBtn = document.querySelector('#saveTestBtn')
 
 $().ready(function () {
     init();
+    log.check();
 })
 
 $(document).ready(function () {
     if (timer) { return; }
     timer = setInterval(update, 3000);
+    var name = localStorage.getItem('name');
+    document.getElementById('top-name').innerHTML = `Hello <span class="name-color">${name}</span>`;
 });
 
 

@@ -4,13 +4,9 @@ const mostRecentScore = localStorage.getItem('mostRecentScore')
 const userId = localStorage.getItem('id')
 const testId = localStorage.getItem('testId')
 
-function OnLogoutClick(){
-    log.logout();
-    location.href = '../../login/index.html';
-}
-
 $(document).ready(function () {
     init();
+    log.check();
 });
 
 function init() {

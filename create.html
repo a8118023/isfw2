@@ -4,17 +4,22 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../lib/osql.js"></script>
-    <script type="text/javascript" src="../../../lib/log.js"></script>
+    <script type="text/javascript" src="./lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/osql.js"></script>
+    <script type="text/javascript" src="./lib/log.js"></script>
     <title>Select Class</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="./../css/create.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/create.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
 <body>
+    <div class="between-space to-top">
+        <p id="top-name" onclick="location.href='top.html'"></p>
+        <a class="gradient1" href="javascript:log.logout();">Logout</a>
+    </div>
+    <hr>
     <div class="parent">
         <div class="child">
             <h1>Class List</h1>
@@ -22,13 +27,13 @@
                 <h2 id="end-text">Enter your Class name below to save your class!</h2>
                 <input type="text" name="class_name" id="class_name" placeholder="Enter your class">
                 <button class="btn" id="saveScoreBtn" type="submit" onclick="buttonPressed()" disabled>Save</button>
-                <a class="btn highscore-btn" href="../../login/top.html">Go Home<i class="fas fa-home"></i></a>
+                <a class="btn highscore-btn" href="top.html">Go Home<i class="fas fa-home"></i></a>
             </form>
         </div>
         <div class="child">
             <div id="result"></div>
         </div>
     </div>
-    <script src="./../js/create.js"></script>
+    <script src="./js/create.js"></script>
 </body>
 </html>

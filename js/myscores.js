@@ -4,11 +4,14 @@ var userId = localStorage.getItem('id')
 
 $().ready(function () {
     init();
+    log.check();
 })
 
 
 function init() {
     buttonPressed();
+    var name = localStorage.getItem('name');
+    document.getElementById('top-name').innerHTML = `Hello <span class="name-color">${name}</span>`;
 }
 
 async function buttonPressed() {

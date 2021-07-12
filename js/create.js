@@ -2,9 +2,13 @@ var timer;
 const class_name = document.querySelector('#class_name')
 const saveScoreBtn = document.querySelector('#saveScoreBtn')
 
+log.check();
+
 $(document).ready(function () {
     if (timer) { return; }
     timer = setInterval(update, 1000);
+    var name = localStorage.getItem('name');
+    document.getElementById('top-name').innerHTML = `Hello <span class="name-color">${name}</span>`;
 });
 
 async function buttonPressed() {

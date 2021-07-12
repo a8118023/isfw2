@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../lib/osql.js"></script>
-    <script type="text/javascript" src="../../../lib/log.js"></script>
+    <script type="text/javascript" src="./lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/osql.js"></script>
+    <script type="text/javascript" src="./lib/log.js"></script>
     <title>EndPage</title>
-    <link rel="stylesheet" href="../../game/css/game.css">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script>
@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <div class="between-space to-top" onclick="location.href='../../login/top.html'">
-        <p id="top-name"></p>
-        <a class="gradient1" href="javascript:OnLogoutClick();">Logout</a>
+    <div class="between-space to-top">
+        <p id="top-name" onclick="location.href='top.html'"></p>
+        <a class="gradient1" href="javascript:log.logout();">Logout</a>
     </div>
     <hr>
     <div class="container">
@@ -28,10 +28,10 @@
                 onclick="saveScore()">Save Record<i class="fas fa-compact-disc"></i></button>
             </div>
             <a href="play.html" class="btn saveBtn">Play Again<i class="fas fa-gamepad"></i></a>
-            <a href="../../login/top.html" class="btn highscore-btn">Go Home<i class="fas fa-home"></i></a>
+            <a href="top.html" class="btn highscore-btn">Go Home<i class="fas fa-home"></i></a>
         </div>
     </div>
-    <script src="../js/end.js"></script>
+    <script src="./js/end.js"></script>
 </body>
 
 </html>

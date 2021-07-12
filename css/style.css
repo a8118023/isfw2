@@ -325,3 +325,10 @@ textarea::placeholder {
 .to-top:hover {
   cursor: pointer;
 }
+
+.create-acount {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #3be3bc;
+  text-decoration: none;
+}
