@@ -3,6 +3,7 @@ const class_name = document.querySelector('#class_name')
 const saveScoreBtn = document.querySelector('#saveScoreBtn')
 
 log.check();
+osql.requireLogin();
 
 $(document).ready(function () {
     if (timer) { return; }

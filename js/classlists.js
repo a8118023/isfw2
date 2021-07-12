@@ -4,6 +4,7 @@ const saveScoreBtn = document.querySelector('#saveScoreBtn')
 $(document).ready(function () {
     init();
     log.check();
+    osql.requireLogin();
 });
 
 function init() {

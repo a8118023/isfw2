@@ -15,6 +15,7 @@ var answer = false;
 $(document).ready(function () {
     init();
     log.check();
+    osql.requireLogin();
 });
 
 async function init() {

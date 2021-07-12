@@ -5,6 +5,7 @@ var userId = localStorage.getItem('id')
 $().ready(function () {
     init();
     log.check();
+    osql.requireLogin();
 })
 
 

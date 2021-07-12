@@ -7,6 +7,7 @@ const testId = localStorage.getItem('testId')
 $(document).ready(function () {
     init();
     log.check();
+    osql.requireLogin();
 });
 
 function init() {

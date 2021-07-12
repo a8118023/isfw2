@@ -7,6 +7,7 @@ const saveScoreBtn = document.querySelector('#saveTestBtn')
 $().ready(function () {
     init();
     log.check();
+    osql.requireLogin();
 })
 
 $(document).ready(function () {
