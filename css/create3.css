@@ -14,8 +14,11 @@
 }
 
 #question {
-  margin-bottom: 2rem;
   margin-top: 2rem;
+}
+
+#answer {
+  margin-bottom: 2rem;
   outline: none;
   width: 100%;
 }

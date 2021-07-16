@@ -16,7 +16,6 @@ function init() {
 }
 
 async function buttonPressed() {
-    // ここを考えていく
     var sql = `select name, test_name, score, date from (Scores inner join Tests on Tests.test_id = Scores.test_id) inner join  Classes on Tests.class_id = Classes.id where Scores.user_id = "${userId}"`;
     console.log(sql);
     var objects = await osql.connect(sql);

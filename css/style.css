@@ -244,11 +244,6 @@ textarea::placeholder {
   color: rgb(28, 26, 26);
 }
 
-/* .card-question,
-.card-answer {
-  font-family: 'DotGothic16', sans-serif;
-} */
-
 .course:hover {
   cursor: pointer;
   color: rgba(3, 68, 147, 0.993);
